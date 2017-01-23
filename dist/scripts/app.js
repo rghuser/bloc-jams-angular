@@ -11,15 +11,12 @@
              url: '/',
 			 controller: 'LandingCtrl as landing',
              templateUrl: '/templates/landing.html'
-<<<<<<< HEAD
          
 	     }) 
-=======
-	     })
-		 
->>>>>>> Checkpoint-5-Controllers
+
          .state('album', {
              url: '/album',
+			 controller: 'AlbumCtrl as album',
              templateUrl: '/templates/album.html'
          })
 		 
