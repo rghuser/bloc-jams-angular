@@ -1,3 +1,7 @@
+ (function() {
+     function Fixtures() {
+         var Fixtures = {};
+		 
  // Example Album 1
  var albumPicasso = {
      title: 'The Colors',
@@ -28,5 +32,16 @@
          { title: 'Can you hear me now?', duration: '3:14' },
          { title: 'Wrong phone number', duration: '2:15'}
      ]
- };
-
+ };		 
+		 
+	     Fixtures.getAlbum = function() {
+         return albumPicasso;
+     };	 
+		 
+         return Fixtures;
+     }
+ 
+     angular
+         .module('blocJams')
+         .factory('Fixtures', Fixtures);
+ })();
