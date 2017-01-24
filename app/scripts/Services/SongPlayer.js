@@ -4,17 +4,35 @@
      function SongPlayer() {
           var SongPlayer = {};
 		 
+          var currentSong = null;
+          var currentBuzzObject = null;
+		 
 //Add a play method to the SongPlayer service so that we can play a song:
-		 
-		 
+		  
 		 SongPlayer.play = function(song) {
-         var currentBuzzObject = new buzz.sound(song.audioUrl, {
-             formats: ['mp3'],
-             preload: true
-         });
+			 if (currentSong !== song) {
+                 if (currentBuzzObject) {
+                     currentBuzzObject.stop();
+					 currentSong.playing = null;
+		     }
+				 
+             var currentBuzzObject = new buzz.sound(song.audioUrl, {
+                     formats: ['mp3'],
+                     preload: true
+             });
+				 
+		 SongPlayer.pause = function(song) {
+             currentBuzzObject.pause();
+             song.playing = false;
+         };
+				 
+                 currentSong = song;				 
  
-         currentBuzzObject.play();    
-     };
+                 currentBuzzObject.play();
+			     song.playing = true;
+			 }
+       };
+		 
           return SongPlayer;
      }
  
