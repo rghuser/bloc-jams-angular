@@ -1,5 +1,6 @@
  (function() {
      function Fixtures() {
+		 
          var Fixtures = {};
 		 
  // Example Album 1
@@ -36,10 +37,21 @@
 		 
 	     Fixtures.getAlbum = function() {
          return albumPicasso;
-     };	 
+     };	
+		 
+		 //Add a second public method to the Fixtures service named getCollection.
+		 //This method should take one argument, numberOfAlbums, and return an array with the specified number of albumPicasso objects pushed to it.
+		 
+		 Fixtures.getCollection = function (numberOfAlbums) {
+			 var albums = [];
+		     for (var i =0; i < numberOfAlbums; i++) {
+				 albums.push(albumPicasso);
+			 }
+			 return albums;
+		 };
 		 
          return Fixtures;
-     }
+     };
  
      angular
          .module('blocJams')

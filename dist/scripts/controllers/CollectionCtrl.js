@@ -1,12 +1,12 @@
  (function() {
-     function CollectionCtrl() {
-		 this.albums = [];
-         for (var i=0; i < 12; i++) {
-             this.albums.push(angular.copy(albumPicasso));
-         }
-     }
+	 //Inject the Fixtures service into CollectionCtrl.
+     function CollectionCtrl(Fixtures) {
+	 //Update CollectionCtrl to use the Fixtures service's getCollection() method:
+		 this.albums = Fixtures.getCollection(12);
+     };
  
      angular
          .module('blocJams')
-         .controller('CollectionCtrl', CollectionCtrl);
+	 //Inject the Fixtures service into CollectionCtrl.
+         .controller('CollectionCtrl', ['Fixtures', CollectionCtrl]);
  })();
