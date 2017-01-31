@@ -1,16 +1,14 @@
  <section class="album-covers container clearfix">
-	
-	 //To avoid a duplicate key error, add track by $index to the ngRepeat directive in collection.html
 
       <div class="collection-album-container column fourth" ng-repeat="album in collection.albums track by $index">
-         <img src="{{ album.albumArtUrl }}">
+         <img src="{{album.albumArtUrl}}">
          <div class="collection-album-info caption">
              <p>
                  <a class="album-name" ui-sref="album">{{ album.title }}</a>
                  <br/>
-                 <a ui-sref="album">{{ album.artist }}</a>
+                 <a ui-sref="album">{{album.artist}}</a>
                  <br/>
-                 {{ album.songs.length }} songs
+                 {{album.songs.length}} songs
                  <br/>
              </p>
          </div>
