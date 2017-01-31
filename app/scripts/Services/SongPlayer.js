@@ -54,10 +54,16 @@
 				  
 				  currentSong = song;
  
-                  currentBuzzObject.play();
-			      song.playing = true;
-               }
-		  };
+                 /**
+         * @function playSong
+         * @desc Play a song
+         * @param {Object} song
+         */      
+		  
+		 var playSong = function(song){
+	                currentBuzzObject.play();
+	                song.playing = true;
+         };
 		 
 	      return SongPlayer;
    };
@@ -66,4 +72,3 @@
          .module('blocJams')
          .factory('SongPlayer', SongPlayer);
  })();
- 
