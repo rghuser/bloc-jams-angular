@@ -1,6 +1,5 @@
  (function() {
      function Fixtures() {
-		 
          var Fixtures = {};
 		 
  // Example Album 1
@@ -36,8 +35,8 @@
  };		 
 		 
 	     Fixtures.getAlbum = function() {
-         return albumPicasso;
-     };	
+             return albumPicasso;
+         };	
 		 
 		 //Add a second public method to the Fixtures service named getCollection.
 		 //This method should take one argument, numberOfAlbums, and return an array with the specified number of albumPicasso objects pushed to it.

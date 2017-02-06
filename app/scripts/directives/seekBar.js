@@ -71,7 +71,7 @@
                      scope.onChange({value: newValue});
                  }
              };
-          }
+           }
         };
 	 };
 	 
