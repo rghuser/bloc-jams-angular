@@ -90,6 +90,11 @@
         * @type {Number}
         */
         SongPlayer.currentTime = null;
+		/**
+        * @desc Volume used for songs
+        * @type {Number}
+        */
+        SongPlayer.volume = 80;
 		 
         //  ___      _    _ _      __  __     _   _            _
         // | _ \_  _| |__| (_)__  |  \/  |___| |_| |_  ___  __| |___
@@ -166,6 +171,17 @@
               currentBuzzObject.setTime(time);
               }
           };
+		 /**
+         * @function setVolume
+         * @desc Set volume for songs
+         * @param {Number} volume
+         */
+         SongPlayer.setVolume = function(volume) {
+             if (currentBuzzObject) {
+                 currentBuzzObject.setVolume(volume);
+             }
+            SongPlayer.volume = volume;
+        };
 		 
 	      return SongPlayer;
      };
